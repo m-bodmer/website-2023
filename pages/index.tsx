@@ -1,6 +1,8 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import animations from "../styles/Animations.module.css";
 import { Exo } from "@next/font/google";
+import { useEffect, useState } from "react";
 const exoScript = Exo({ subsets: ["latin"] });
 
 /*
@@ -18,6 +20,12 @@ Hippie Blue
 */
 
 export default function Home() {
+  const [playAnimation, setPlayAnimation] = useState(false);
+
+  useEffect(() => {
+    setPlayAnimation(true);
+  }, []);
+
   return (
     <div className={`${styles.container}`}>
       <Head>
@@ -34,7 +42,11 @@ export default function Home() {
 
         <h2 className={`${styles.subtitle} ${exoScript.className}`}>About</h2>
 
-        <p className={`${styles.description} `}>
+        <p
+          className={`${styles.description} ${animations.textHidden} ${
+            playAnimation ? animations.textShow : ""
+          }`}
+        >
           👋 I am a web engineer currently looking for my next role.
           <br />
           <br />
