@@ -35,17 +35,29 @@ export default function Home() {
 
       <main>
         <h1
-          className={`${styles.title} ${styles.futuretitle} ${exoScript.className}`}
+          className={`${styles.title} ${styles.futuretitle} ${
+            exoScript.className
+          } ${animations.delay1} ${animations.textHidden} ${
+            playAnimation ? animations.textShow : ""
+          }`}
         >
           Coming soon!
         </h1>
 
-        <h2 className={`${styles.subtitle} ${exoScript.className}`}>About</h2>
-
-        <p
-          className={`${styles.description} ${animations.textHidden} ${
+        <h2
+          className={`${styles.subtitle} ${exoScript.className} ${
+            animations.delay2
+          } ${animations.textHidden} ${
             playAnimation ? animations.textShow : ""
           }`}
+        >
+          About
+        </h2>
+
+        <p
+          className={`${styles.description} ${animations.delay2} ${
+            animations.textHidden
+          } ${playAnimation ? animations.textShow : ""} `}
         >
           👋 I am a web engineer currently looking for my next role.
           <br />
@@ -59,10 +71,20 @@ export default function Home() {
           photography community on the internet.
         </p>
 
-        <h2 className={`${styles.subtitle} ${exoScript.className}`}>Contact</h2>
+        <h2
+          className={`${styles.subtitle} ${exoScript.className} ${
+            animations.delay3
+          } ${animations.textHidden} ${
+            playAnimation ? animations.textShow : ""
+          }`}
+        >
+          Contact
+        </h2>
 
         <a
-          className={`${styles.contactlink}`}
+          className={`${styles.contactlink} ${animations.delay3} ${
+            animations.textHidden
+          } ${playAnimation ? animations.textShow : ""}`}
           href="https://www.linkedin.com/in/marc-bodmer-dev/"
         >
           💼 LinkedIn
