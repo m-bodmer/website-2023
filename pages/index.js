@@ -1,10 +1,7 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
-import { Exo } from '@next/font/google';
-const exoScript = Exo({ subsets: ['latin'] });
-import { Dosis } from '@next/font/google';
-const dosisScript = Dosis({ subsets: ['latin'] });
-
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import { Exo } from "@next/font/google";
+const exoScript = Exo({ subsets: ["latin"] });
 
 /*
 Oxford Blue
@@ -21,7 +18,6 @@ Hippie Blue
 */
 
 export default function Home() {
-
   return (
     <div className={`${styles.container}`}>
       <Head>
@@ -30,24 +26,32 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 className={`${styles.title} ${styles.futuretitle} ${exoScript.className}`}>
+        <h1
+          className={`${styles.title} ${styles.futuretitle} ${exoScript.className}`}
+        >
           Coming soon!
         </h1>
 
-        <h2 className={`${styles.subtitle} ${exoScript.className}`}>
-          About
-        </h2>
+        <h2 className={`${styles.subtitle} ${exoScript.className}`}>About</h2>
 
-        <p className={`${styles.description} ${dosisScript.className}`}>
-          👋 I am a web engineer currently looking for my next role.<br/><br/>Previously, I worked at Cloudflare, the leading Internet security and performance company.<br/><br/>
-          Before that, I worked at companies such as Teehan+Lax, a highly influential digital agency during its time, and 500px, the premier photography community on the internet.
+        <p className={`${styles.description} `}>
+          👋 I am a web engineer currently looking for my next role.
+          <br />
+          <br />
+          Previously, I worked at Cloudflare, the leading Internet security and
+          performance company.
+          <br />
+          <br />
+          Before that, I worked at companies such as Teehan+Lax, a highly
+          influential digital agency during its time, and 500px, the premier
+          photography community on the internet.
         </p>
 
-        <h2 className={`${styles.subtitle} ${exoScript.className}`}>
-          Contact
-        </h2>
+        <h2 className={`${styles.subtitle} ${exoScript.className}`}>Contact</h2>
 
-        <p className={`${dosisScript.className}`}><a href="https://www.linkedin.com/in/marc-bodmer-dev/">💼 LinkedIn</a></p>
+        <p className={``}>
+          <a href="https://www.linkedin.com/in/marc-bodmer-dev/">💼 LinkedIn</a>
+        </p>
       </main>
 
       <footer>
@@ -108,5 +112,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }

@@ -5,13 +5,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #F2F1F0;
+  background-color: #f2f1f0;
   color: #103240;
 }
 
 .futuretitle {
   background-color: #103240;
-  color: #F2F1F0;
+  color: #f2f1f0;
   padding: 15px 25px;
   border-radius: 2px;
 }
@@ -32,7 +32,6 @@
   font-size: 3.6rem;
 }
 
-
 .title,
 .description {
   text-align: center;
@@ -43,7 +42,6 @@
   margin-bottom: 0px;
   margin-top: 80px;
 }
-
 
 .description {
   line-height: 1.4;
