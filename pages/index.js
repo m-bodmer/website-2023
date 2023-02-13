@@ -1,33 +1,53 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+import { Exo } from '@next/font/google';
+const exoScript = Exo({ subsets: ['latin'] });
+import { Dosis } from '@next/font/google';
+const dosisScript = Dosis({ subsets: ['latin'] });
+
+
+/*
+Oxford Blue
+#334451
+
+Ziggurat
+#BDD4E0
+
+Half Baked
+#82B4CF
+
+Hippie Blue
+#618EB6
+*/
 
 export default function Home() {
+
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container}`}>
       <Head>
-        <title>Create Next App</title>
+        <title>Marc Bodmer</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <h1 className={styles.title}>
+        <h1 className={`${styles.title} ${exoScript.className}`}>
           Coming soon!
         </h1>
 
-        <h2 className={`${styles.title} ${styles.small}`}>
+        <h2 className={`${styles.subtitle} ${exoScript.className}`}>
           About
         </h2>
 
-        <p className={styles.description}>
+        <p className={`${styles.description} ${dosisScript.className}`}>
           👋 I am a web engineer currently looking for my next role.<br/><br/>Previously, I worked at Cloudflare, the leading Internet security and performance company.<br/><br/>
-          Before that, I worked at companies such as Teehan+Lax, one of the most influential digital agencies in the world during its time, and 500px, the premier photography community on the internet.
+          Before that, I worked at companies such as Teehan+Lax, a highly influential digital agency during its time, and 500px, the premier photography community on the internet.
         </p>
 
-        <h2 className={`${styles.title} ${styles.small}`}>
+        <h2 className={`${styles.subtitle} ${exoScript.className}`}>
           Contact
         </h2>
 
-        <p><a href="https://www.linkedin.com/in/marc-bodmer-dev/">💼 LinkedIn</a></p>
+        <p className={`${dosisScript.className}`}><a href="https://www.linkedin.com/in/marc-bodmer-dev/">💼 LinkedIn</a></p>
       </main>
 
       <footer>
@@ -56,9 +76,6 @@ export default function Home() {
           display: flex;
           justify-content: center;
           align-items: center;
-        }
-        footer img {
-          margin-left: 0.5rem;
         }
         footer a {
           display: flex;
