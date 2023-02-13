@@ -23,7 +23,18 @@ export default function Home() {
   const [playAnimation, setPlayAnimation] = useState(false);
 
   useEffect(() => {
-    setPlayAnimation(true);
+    const onPageLoad = () => {
+      setPlayAnimation(true);
+    };
+
+    // Check if the page has already loaded
+    if (document.readyState === "complete") {
+      onPageLoad();
+    } else {
+      window.addEventListener("load", onPageLoad);
+      // Remove the event listener when component unmounts
+      return () => window.removeEventListener("load", onPageLoad);
+    }
   }, []);
 
   return (

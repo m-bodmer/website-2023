@@ -1,15 +1,18 @@
 .delay1 {
-  transition: all 2s;
+  transition-property: opacity, filter;
+  transition-duration: 2s;
   transition-delay: 100ms;
 }
 
 .delay2 {
-  transition: all 2s;
+  transition-property: opacity, filter;
+  transition-duration: 2s;
   transition-delay: 300ms;
 }
 
 .delay3 {
-  transition: all 2s;
+  transition-property: opacity, filter;
+  transition-duration: 2s;
   transition-delay: 500ms;
 }
 
