@@ -49,9 +49,12 @@ export default function Home() {
 
         <h2 className={`${styles.subtitle} ${exoScript.className}`}>Contact</h2>
 
-        <p className={``}>
-          <a href="https://www.linkedin.com/in/marc-bodmer-dev/">💼 LinkedIn</a>
-        </p>
+        <a
+          className={`${styles.contactlink}`}
+          href="https://www.linkedin.com/in/marc-bodmer-dev/"
+        >
+          💼 LinkedIn
+        </a>
       </main>
 
       <footer>
