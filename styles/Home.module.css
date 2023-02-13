@@ -9,8 +9,14 @@
   color: #103240;
 }
 
+.futuretitle {
+  background-color: #103240;
+  color: #F2F1F0;
+  padding: 15px 25px;
+  border-radius: 2px;
+}
+
 .title a {
-  color: #0070f3;
   text-decoration: none;
 }
 

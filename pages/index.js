@@ -30,7 +30,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 className={`${styles.title} ${exoScript.className}`}>
+        <h1 className={`${styles.title} ${styles.futuretitle} ${exoScript.className}`}>
           Coming soon!
         </h1>
 
