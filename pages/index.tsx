@@ -1,30 +1,88 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import animations from "../styles/Animations.module.css";
 import { Exo } from "@next/font/google";
 import { useEffect, useState } from "react";
 const exoScript = Exo({ subsets: ["latin"] });
+import styled, { css } from "styled-components";
 
-/*
-Oxford Blue
-#334451
+const LoadAnimation = css`
+  transition-property: opacity, filter;
+  transition-duration: 2s;
+`;
 
-Ziggurat
-#BDD4E0
+const LayoutContainer = styled.div`
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f1f0;
+  color: #103240;
+`;
 
-Half Baked
-#82B4CF
+const MainContainer = styled.main`
+  padding: 5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
-Hippie Blue
-#618EB6
-*/
+const Heading = styled.h2`
+  font-size: 2rem;
+  margin-bottom: 20px;
+  margin-top: 80px;
+  background-color: #103240;
+  color: #f2f1f0;
+  padding: 5px 15px;
+  border-radius: 2px;
+  opacity: ${(props) => (props.visible ? "1" : "0")};
+  filter: ${(props) => (props.visible ? "blur(0)" : "blur(2px)")};
+  transition-delay: ${(props) => `${props.animationDelay}ms`};
+  ${LoadAnimation};
+`;
+
+const Description = styled.p`
+  line-height: 1.2;
+  font-size: 1.2rem;
+  max-width: 800px;
+  text-align: center;
+  opacity: ${(props) => (props.visible ? "1" : "0")};
+  filter: ${(props) => (props.visible ? "blur(0)" : "blur(2px)")};
+  transition-delay: ${(props) => `${props.animationDelay}ms`};
+  ${LoadAnimation}
+`;
+
+const Footer = styled.footer`
+  width: 100%;
+  height: 100px;
+  border-top: 1px solid #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ContactLink = styled.a`
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  color: #103240;
+  &:hover {
+    text-decoration: underline;
+  }
+  opacity: ${(props) => (props.visible ? "1" : "0")};
+  filter: ${(props) => (props.visible ? "blur(0)" : "blur(2px)")};
+  transition-delay: ${(props) => `${props.animationDelay}ms`};
+  ${LoadAnimation}
+`;
 
 export default function Home() {
-  const [playAnimation, setPlayAnimation] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const onPageLoad = () => {
-      setPlayAnimation(true);
+      setIsVisible(true);
     };
 
     // Check if the page has already loaded
@@ -38,39 +96,23 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={`${styles.container}`}>
+    <LayoutContainer>
       <Head>
         <title>Marc Bodmer</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1
-          className={`${styles.title} ${styles.futuretitle} ${
-            exoScript.className
-          } ${animations.delay1} ${animations.textHidden} ${
-            playAnimation ? animations.textShow : ""
-          }`}
-        >
-          Coming soon!
-        </h1>
-
-        <h2
-          className={`${styles.subtitle} ${exoScript.className} ${
-            animations.delay2
-          } ${animations.textHidden} ${
-            playAnimation ? animations.textShow : ""
-          }`}
+      <MainContainer>
+        <Heading
+          className={`${exoScript.className}`}
+          visible={isVisible}
+          animationDelay={200}
         >
           About
-        </h2>
+        </Heading>
 
-        <p
-          className={`${styles.description} ${animations.delay2} ${
-            animations.textHidden
-          } ${playAnimation ? animations.textShow : ""} `}
-        >
-          👋 I am a web engineer currently looking for my next role.
+        <Description visible={isVisible} animationDelay={400}>
+          👋 I am a full stack web engineer currently looking for my next role.
           <br />
           <br />
           Previously, I worked at Cloudflare, the leading Internet security and
@@ -80,85 +122,34 @@ export default function Home() {
           Before that, I worked at companies such as Teehan+Lax, a highly
           influential digital agency during its time, and 500px, the premier
           photography community on the internet.
-        </p>
+        </Description>
 
-        <h2
-          className={`${styles.subtitle} ${exoScript.className} ${
-            animations.delay3
-          } ${animations.textHidden} ${
-            playAnimation ? animations.textShow : ""
-          }`}
+        <Heading
+          className={`${exoScript.className}`}
+          visible={isVisible}
+          animationDelay={600}
         >
           Contact
-        </h2>
+        </Heading>
 
-        <a
-          className={`${styles.contactlink} ${animations.delay3} ${
-            animations.textHidden
-          } ${playAnimation ? animations.textShow : ""}`}
+        <ContactLink
+          visible={isVisible}
+          animationDelay={800}
           href="https://www.linkedin.com/in/marc-bodmer-dev/"
         >
           💼 LinkedIn
-        </a>
-      </main>
+        </ContactLink>
 
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        <ContactLink
+          visible={isVisible}
+          animationDelay={800}
+          href="https://github.com/m-bodmer/website-2023"
         >
-          © 2023
-        </a>
-      </footer>
+          👩‍💻 Source Code
+        </ContactLink>
+      </MainContainer>
 
-      <style jsx>{`
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          text-decoration: none;
-          color: inherit;
-        }
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-    </div>
+      <Footer>© 2023</Footer>
+    </LayoutContainer>
   );
 }

@@ -1,0 +1,33 @@
+/* Color Theme Swatches in Hex */
+/* .Grey-futuristic-interior-1-hex { color: #80A7BF; }
+.Grey-futuristic-interior-2-hex { color: #103240; }
+.Grey-futuristic-interior-3-hex { color: #466B73; }
+.Grey-futuristic-interior-4-hex { color: #8FA1A6; }
+.Grey-futuristic-interior-5-hex { color: #F2F1F0; } */
+
+/*
+Oxford Blue
+#334451
+
+Ziggurat
+#BDD4E0
+
+Half Baked
+#82B4CF
+
+Hippie Blue
+#618EB6
+*/
+
+/*
+Optional black background - #0D0D0D THIS LOOKS CORRECT
+White text on top - #F2F1F0
+Border same color
+*/
+/* 
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+} */
