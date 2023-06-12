@@ -112,7 +112,7 @@ export default function Home() {
         </Heading>
 
         <Description visible={isVisible} animationDelay={400}>
-          👋 I am a full stack web engineer currently looking for my next role.
+          👋 I am a full stack web engineer currently working at <a href="https://www.underline.com/">Underline Infrastructure</a>.
           <br />
           <br />
           Previously, I worked at Cloudflare, the leading Internet security and
