@@ -112,14 +112,14 @@ export default function Home() {
         </Heading>
 
         <Description visible={isVisible} animationDelay={400}>
-          👋 I am a full stack web engineer currently working at <a href="https://www.underline.com/">Underline Infrastructure</a>.
+          👋 I am a full stack web engineer, previously at <a href="https://www.underline.com/">Underline Infrastructure</a>.
           <br />
           <br />
-          Previously, I worked at Cloudflare, the leading Internet security and
+          Before that, I worked at Cloudflare, the leading Internet security and
           performance company.
           <br />
           <br />
-          Before that, I worked at companies such as Teehan+Lax, a highly
+          And before that, I worked at companies such as Teehan+Lax, a highly
           influential digital agency during its time, and 500px, the premier
           photography community on the internet.
         </Description>
