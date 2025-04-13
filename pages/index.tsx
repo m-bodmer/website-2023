@@ -46,8 +46,8 @@ const Heading = styled.h2`
 const Description = styled.p`
   line-height: 1.2;
   font-size: 1.2rem;
-  max-width: 800px;
-  text-align: center;
+  max-width: 650px;
+  text-align: left;
   opacity: ${(props) => (props.visible ? "1" : "0")};
   filter: ${(props) => (props.visible ? "blur(0)" : "blur(2px)")};
   transition-delay: ${(props) => `${props.animationDelay}ms`};
@@ -112,10 +112,16 @@ export default function Home() {
         </Heading>
 
         <Description visible={isVisible} animationDelay={400}>
-          👋 I am a full stack web engineer, previously at <a href="https://www.underline.com/">Underline Infrastructure</a>.
+          👋 I am a full stack web engineer, passionate about helping companies grow.
           <br />
           <br />
-          Before that, I worked at Cloudflare, the leading Internet security and
+          Currently helping grow a youth sports platform, <a href="https://gc.com/">Gamechanger</a>.
+          <br />
+          <br />
+          Previously at <a href="https://www.underline.com/">Underline Infrastructure</a>, helping build software to power multi-purpose fiber networks in America.
+          <br />
+          <br />
+          Before that, I worked at <a href="https://www.cloudflare.com/">Cloudflare</a>, the leading Internet security and
           performance company.
           <br />
           <br />
@@ -148,8 +154,6 @@ export default function Home() {
           👩‍💻 Source Code
         </ContactLink>
       </MainContainer>
-
-      <Footer>© 2023</Footer>
     </LayoutContainer>
   );
 }
