@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Exo } from "@next/font/google";
+import { Exo } from "next/font/google";
 import { useEffect, useState } from "react";
 const exoScript = Exo({ subsets: ["latin"] });
 import styled, { css } from "styled-components";
